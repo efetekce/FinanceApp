@@ -15,13 +15,15 @@ namespace api.Controllers
     [ApiController]
     public class StockController : ControllerBase
     {
-        private readonly ApplicationDBContext _context;
+        // private readonly ApplicationDBContext _context;
+        // context is already used in stock repository, no need to use it here
         private readonly IStockRepository _stockRepo;
 
-        public StockController(ApplicationDBContext context, IStockRepository stockRepo)
+        public StockController(IStockRepository stockRepo)
         {
             _stockRepo = stockRepo;
-            _context = context;
+            // _context = context;
+            // removing context from the arguments and injection.
         }
 
         [HttpGet]
