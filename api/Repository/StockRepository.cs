@@ -60,9 +60,11 @@ namespace api.Repository
                 }
 
             }
-            // if (!string.IsNullOrWhiteSpace(query.IsDescending)) { }
 
-            return await stocks.ToListAsync();
+            // skip is going to skip the given number of pages and take will take the rest. when combined, pagination is created.
+            var skipNumber = (query.PageNumber - 1) * query.PageSize;
+
+            return await stocks.Skip(skipNumber).Take(query.PageSize).ToListAsync();
         }
 
         public async Task<Stock?> GetByIdAsync(int id)
