@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
 {
+    //controllers make relevant api endpoints according to methods in repositories. we can choose what to serve as endpoints.
     [Route("api/comment")]
     [ApiController]
     public class CommentController : ControllerBase

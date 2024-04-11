@@ -9,6 +9,7 @@ namespace api.Mappers
 {
     public static class CommentMapper
     {
+        // mappers are used to match and convert dtos to models and vice versa.
         public static CommentDto ToCommentDto(this Comment commentModel)
         {
             return new CommentDto
@@ -23,6 +24,7 @@ namespace api.Mappers
         }
         public static Comment ToCommentFromCreate(this CreateCommentDto commentDto, int stockId)
         {
+
             return new Comment
             {
                 Title = commentDto.Title,

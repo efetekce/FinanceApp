@@ -8,6 +8,7 @@ namespace api.Dtos.Comment
 {
     public class UpdateCommentRequestDto
     {
+        //dtos are used to get only necessary user input. it does not have to have all model fields. 
         [Required]
         [MinLength(5, ErrorMessage = "Title must be at least 5 characters.")]
         [MaxLength(280, ErrorMessage = "Title can not be over 280 characters.")]

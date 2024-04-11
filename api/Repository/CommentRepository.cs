@@ -11,7 +11,7 @@ namespace api.Repository
 {
     public class CommentRepository : ICommentRepository
     {
-
+        // we make database interactions within repositories.
         private readonly ApplicationDBContext _context;
         // we can only mutate readonly variables within the constructor scope.
         public CommentRepository(ApplicationDBContext context)

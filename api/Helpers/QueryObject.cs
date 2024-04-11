@@ -7,6 +7,7 @@ namespace api.Helpers
 {
     public class QueryObject
     {
+        //query object is a helper object used to get relevant data within the query strings.
         public string? Symbol { get; set; } = null;
         public string? CompanyName { get; set; } = null;
         public string? SortBy { get; set; } = null;

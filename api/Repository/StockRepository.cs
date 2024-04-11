@@ -65,6 +65,8 @@ namespace api.Repository
             var skipNumber = (query.PageNumber - 1) * query.PageSize;
 
             return await stocks.Skip(skipNumber).Take(query.PageSize).ToListAsync();
+            //page size represents the records displayed on that single and each page.
+            //page number represents the current page number displayed.
         }
 
         public async Task<Stock?> GetByIdAsync(int id)

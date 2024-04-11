@@ -8,6 +8,7 @@ namespace api.Interfaces
 {
     public interface ICommentRepository
     {
+        //defining all methods in the interface. bodies will be implemented in repositories.
         Task<List<Comment>> GetAllAsync();
         Task<Comment?> GetByIdAsync(int id);
         Task<Comment> CreateAsync(Comment commentModel);
