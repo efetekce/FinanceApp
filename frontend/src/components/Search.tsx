@@ -1,26 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { CompanySearch } from "./Api";
 const apiKey = import.meta.env.VITE_API_KEY;
 console.log(apiKey);
-type Props = {};
-const Search = (props: Props) => {
+
+interface Props {
+  search: string | undefined;
+  onClick: (e: React.SyntheticEvent) => void;
+  onSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+const Search = ({ onClick, onSearch, search }: Props) => {
   useEffect(() => {
     CompanySearch("tsla");
   }, []);
-  const [search, setSearch] = useState("");
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
-    console.log(e);
-  };
-
-  const handleClick = (e: React.MouseEvent) => {
-    console.log(e);
-  };
   return (
     <div>
-      <input type="text" value={search} onChange={(e) => handleSearch(e)} />
-      <button onClick={(e) => handleClick(e)}>button</button>
+      <input type="text" value={search} onChange={(e) => onSearch(e)} />
+      <button onClick={(e) => onClick(e)}>button</button>
     </div>
   );
 };
