@@ -1,16 +1,9 @@
-import { useEffect } from "react";
-import { companySearch } from "./Api";
-
 interface Props {
   search: string | undefined;
   onClick: (e: React.SyntheticEvent) => void;
   onSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 const Search = ({ onClick, onSearch, search }: Props) => {
-  //   useEffect(() => {
-  //     companySearch("tsla");
-  //   }, []);
-
   return (
     <div>
       <input type="text" value={search} onChange={(e) => onSearch(e)} />
