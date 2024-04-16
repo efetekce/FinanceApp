@@ -1,7 +1,5 @@
 import { useEffect } from "react";
-import { CompanySearch } from "./Api";
-const apiKey = import.meta.env.VITE_API_KEY;
-console.log(apiKey);
+import { companySearch } from "./Api";
 
 interface Props {
   search: string | undefined;
@@ -9,9 +7,9 @@ interface Props {
   onSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 const Search = ({ onClick, onSearch, search }: Props) => {
-  useEffect(() => {
-    CompanySearch("tsla");
-  }, []);
+  //   useEffect(() => {
+  //     companySearch("tsla");
+  //   }, []);
 
   return (
     <div>
