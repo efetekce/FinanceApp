@@ -4,10 +4,25 @@ import CardList from "./components/CardList";
 import Search from "./components/Search";
 import { CompanySearch } from "./types";
 import { useCompanySearch } from "./hooks/useCompanySearch";
+import axios from "axios";
 
 function App() {
   const [search, setSearch] = useState("");
-  const searchResult = useCompanySearch(search);
+  const companySearch = async (query: string) => {
+    try {
+      const data = await axios.get<CompanySearch[]>(
+        `https://financialmodelingprep.com/api/v3/search-ticker?query=${query}&limit=10&exchange=NASDAQ&apikey=${
+          import.meta.env.VITE_API_KEY_2
+        }`
+      );
+      console.log(data);
+      return data;
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        console.log("error: ", error.message);
+      } else console.log("unexpected error");
+    }
+  };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
@@ -15,9 +30,8 @@ function App() {
   const [serverError, setServerError] = useState("");
 
   const handleClick = async (e: React.SyntheticEvent) => {
-    const result = await searchResult;
-
-    console.log(result);
+    // console.log(result);
+    companySearch(search);
   };
 
   return (
