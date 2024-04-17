@@ -25,20 +25,32 @@ function App() {
     }
   };
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
   const [serverError, setServerError] = useState("");
 
-  const handleClick = async (e: React.SyntheticEvent) => {
+  const handleSearchSubmit = async (e: React.SyntheticEvent) => {
+    e.preventDefault();
     // console.log(result);
     companySearch(search);
   };
 
+  const onPortfolioCreate = (e: React.SyntheticEvent) => {
+    console.log(e);
+  };
+
   return (
     <>
-      <Search search={search} onSearch={handleSearch} onClick={handleClick} />
-      <CardList searchResult={searchResult} />
+      <Search
+        search={search}
+        onSearchSubmit={handleSearchSubmit}
+        onSearchChange={handleSearchChange}
+      />
+      <CardList
+        searchResult={searchResult}
+        onPortfolioCreate={onPortfolioCreate}
+      />
     </>
   );
 }

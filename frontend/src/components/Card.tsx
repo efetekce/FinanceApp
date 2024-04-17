@@ -1,9 +1,11 @@
 import { CompanySearch } from "../types";
+import AddPortfolio from "./AddPortfolio";
 
 type Props = {
   result: CompanySearch;
+  onPortfolioCreate: (e: React.SyntheticEvent) => void;
 };
-const Card = ({ result }: Props) => {
+const Card = ({ result, onPortfolioCreate }: Props) => {
   return (
     <div className="flex flex-col justify-center items-center shadow-2xl p-4 rounded-xl w-1/3 text-center">
       <img
@@ -21,6 +23,7 @@ const Card = ({ result }: Props) => {
         totam quae eveniet voluptatum ipsa facere excepturi animi, nihil
         exercitationem!
       </p>
+      <AddPortfolio onPortfolioCreate={onPortfolioCreate} />
     </div>
   );
 };
