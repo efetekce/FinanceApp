@@ -1,20 +1,20 @@
+import { CompanySearch } from "../types";
+
 type Props = {
-  companyName: string;
-  ticker: string;
-  price: number;
+  result: CompanySearch;
 };
-const Card = ({ companyName, ticker, price }: Props) => {
+const Card = ({ result }: Props) => {
   return (
     <div className="flex flex-col justify-center items-center shadow-2xl p-4 rounded-xl w-1/3 text-center">
       <img
         src="https://react-typescript-cheatsheet.netlify.app/img/icon.png"
         className="w-20 h-20"
       />
-      This will be a card
+      {result.name}
       <div className="details">
-        <h2>{companyName}</h2>
-        <p>{ticker}</p>
-        <p>${price}</p>
+        <h2>{result.name}</h2>
+        <p>{result.symbol}</p>
+        <p>${result.currency}</p>
       </div>
       <p className="info">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quod

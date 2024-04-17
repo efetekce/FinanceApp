@@ -1,12 +1,22 @@
+import { CompanySearch } from "../types";
 import Card from "./Card";
 
-type Props = {};
-const CardList = (props: Props) => {
+interface Props {
+  searchResult: CompanySearch[];
+}
+const CardList = ({ searchResult }: Props) => {
   return (
     <div className="flex flex-wrap gap-4">
-      <Card companyName="Apple" ticker="AAPL" price={200} />
+      {/* <Card companyName="Apple" ticker="AAPL" price={200} />
       <Card companyName="Tesla" ticker="TSLA" price={200} />
-      <Card companyName="Microsoft" ticker="MSFT" price={200} />
+      <Card companyName="Microsoft" ticker="MSFT" price={200} /> */}
+      {searchResult.length > 0 ? (
+        searchResult.map((result, index) => {
+          return <Card result={result} key={index} />;
+        })
+      ) : (
+        <p>no results</p>
+      )}
     </div>
   );
 };
