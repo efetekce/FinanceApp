@@ -3,7 +3,7 @@ import Card from "./Card";
 
 interface Props {
   searchResult: CompanySearch[];
-  onPortfolioCreate: (e: React.SyntheticEvent) => void;
+  onPortfolioCreate: (e: React.SyntheticEvent, result: CompanySearch) => void;
 }
 const CardList = ({ searchResult, onPortfolioCreate }: Props) => {
   return (

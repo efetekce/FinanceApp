@@ -3,7 +3,7 @@ import AddPortfolio from "./AddPortfolio";
 
 type Props = {
   result: CompanySearch;
-  onPortfolioCreate: (e: React.SyntheticEvent) => void;
+  onPortfolioCreate: (e: React.SyntheticEvent, result: CompanySearch) => void;
 };
 const Card = ({ result, onPortfolioCreate }: Props) => {
   return (
@@ -23,7 +23,7 @@ const Card = ({ result, onPortfolioCreate }: Props) => {
         totam quae eveniet voluptatum ipsa facere excepturi animi, nihil
         exercitationem!
       </p>
-      <AddPortfolio onPortfolioCreate={onPortfolioCreate} />
+      <AddPortfolio onPortfolioCreate={onPortfolioCreate} result={result} />
     </div>
   );
 };

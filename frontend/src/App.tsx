@@ -5,9 +5,11 @@ import Search from "./components/Search";
 import { CompanySearch } from "./types";
 import { useCompanySearch } from "./hooks/useCompanySearch";
 import axios from "axios";
+import PortfolioList from "./components/PortfolioList";
 
 function App() {
   const [search, setSearch] = useState("");
+  const [portfolio, setPortfolio] = useState<CompanySearch[]>([]);
   const [searchResult, setSearchResult] = useState<CompanySearch[]>([]);
   const companySearch = async (query: string) => {
     try {
@@ -36,8 +38,15 @@ function App() {
     companySearch(search);
   };
 
-  const onPortfolioCreate = (e: React.SyntheticEvent) => {
-    console.log(e);
+  const onPortfolioCreate = (
+    e: React.SyntheticEvent,
+    result: CompanySearch
+  ) => {
+    // console.log(e);
+    if (portfolio.find((item) => item !== result)) {
+      setPortfolio([...portfolio, result]);
+    }
+    console.log(portfolio);
   };
 
   return (
@@ -51,6 +60,8 @@ function App() {
         searchResult={searchResult}
         onPortfolioCreate={onPortfolioCreate}
       />
+
+      {portfolio.length > 0 && <PortfolioList portfolio={portfolio} />}
     </>
   );
 }
