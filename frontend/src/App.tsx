@@ -43,7 +43,8 @@ function App() {
     result: CompanySearch
   ) => {
     // console.log(e);
-    if (portfolio.find((item) => item !== result)) {
+
+    if (!portfolio.find((item) => item.name === result.name)) {
       setPortfolio([...portfolio, result]);
     }
     console.log(portfolio);
