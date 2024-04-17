@@ -50,6 +50,14 @@ function App() {
     console.log(portfolio);
   };
 
+  const handlePortfolioDelete = (item: CompanySearch) => {
+    setPortfolio(
+      portfolio.filter((element) => {
+        return element.name !== item.name;
+      })
+    );
+  };
+
   return (
     <>
       <Search
@@ -62,7 +70,12 @@ function App() {
         onPortfolioCreate={onPortfolioCreate}
       />
 
-      {portfolio.length > 0 && <PortfolioList portfolio={portfolio} />}
+      {portfolio.length > 0 && (
+        <PortfolioList
+          portfolio={portfolio}
+          onPortfolioDelete={handlePortfolioDelete}
+        />
+      )}
     </>
   );
 }
