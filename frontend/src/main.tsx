@@ -6,6 +6,8 @@ import HomePage from "./pages/HomePage.tsx";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import SearchPage from "./pages/SearchPage.tsx";
 import CompanyPage from "./pages/CompanyPage.tsx";
+import CompanyProfile from "./components/CompanyProfile.tsx";
+import IncomeStatement from "./components/IncomeStatement.tsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "company/:ticker",
         element: <CompanyPage />,
+        children: [
+          { path: "company-profile", element: <CompanyProfile /> },
+          { path: "income-statement", element: <IncomeStatement /> },
+        ],
       },
     ],
   },
