@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import { CompanySearch } from "../types";
+import { CompanyProfile, CompanySearch } from "../types";
 import { useEffect, useState } from "react";
 
 // interface SearchResponse {
@@ -36,4 +36,18 @@ export const useCompanySearch = async (query: string) => {
   }, [query]);
 
   return { searchResult };
+};
+
+export const getCompanyProfile = async (companyName: string | null) => {
+  try {
+    const response = await axios.get<CompanyProfile[]>(
+      `https://financialmodelingprep.com/api/v3/profile/${companyName}?apikey=${
+        import.meta.env.VITE_API_KEY_2
+      }`
+    );
+    console.log(response);
+    return response;
+  } catch (error) {
+    console.log("error: ", error);
+  }
 };
