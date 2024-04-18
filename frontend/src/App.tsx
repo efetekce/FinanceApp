@@ -6,6 +6,8 @@ import { CompanySearch } from "./types";
 import { useCompanySearch } from "./hooks/useCompanySearch";
 import axios from "axios";
 import PortfolioList from "./components/PortfolioList";
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -60,6 +62,8 @@ function App() {
 
   return (
     <>
+      <Navbar />
+
       <Search
         search={search}
         onSearchSubmit={handleSearchSubmit}
