@@ -1,5 +1,5 @@
 type Props = {};
-import { currency } from "./currency.png";
+import { Link } from "react-router-dom";
 
 const Hero = (props: Props) => {
   return (
@@ -14,16 +14,16 @@ const Hero = (props: Props) => {
             news.
           </p>
           <div className="mx-auto lg:mx-0">
-            <a
-              href=""
+            <Link
+              to={"/search"}
               className="bg-lightGreen hover:opacity-70 px-10 py-5 lg:py-4 rounded font-bold text-2xl text-white"
             >
               Get Started
-            </a>
+            </Link>
           </div>
         </div>
         <div className="mx-auto mb-24 lg:mb-0 md:px-10 md:w-180 lg:w-1/2">
-          <img src={currency} alt="" />
+          <img src="/currency.png" alt="" />
         </div>
       </div>
     </section>

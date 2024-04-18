@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 type Props = {};
 
 const Navbar = (props: Props) => {
@@ -5,11 +7,13 @@ const Navbar = (props: Props) => {
     <nav className="relative mx-auto p-6 container">
       <div className="flex justify-between items-center">
         <div className="flex items-center space-x-20">
-          <img src="./currency.png" alt="" />
+          <Link to="/">
+            <img src="./currency.png" alt="" />
+          </Link>
           <div className="lg:flex hidden font-bold">
-            <a href="" className="text-black hover:text-darkBlue">
-              Dashboard
-            </a>
+            <Link to={"/search"} className="text-black hover:text-darkBlue">
+              Search
+            </Link>
           </div>
         </div>
         <div className="lg:flex items-center space-x-6 hidden text-back">

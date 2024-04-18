@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CompanySearch } from "../types";
 import AddPortfolio from "./AddPortfolio";
 
@@ -14,8 +15,10 @@ const Card = ({ result, onPortfolioCreate }: Props) => {
       />
       {result.name}
       <div className="details">
-        <h2>{result.name}</h2>
-        <p>{result.symbol}</p>
+        <Link to={`/company/${result.symbol}`}>
+          <h2>{result.name}</h2>
+          <p>{result.symbol}</p>
+        </Link>
         <p>${result.currency}</p>
       </div>
       <p className="info">

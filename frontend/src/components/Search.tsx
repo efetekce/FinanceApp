@@ -6,8 +6,12 @@ interface Props {
 const Search = ({ onSearchChange, onSearchSubmit, search }: Props) => {
   return (
     <>
-      <form onSubmit={onSearchSubmit}>
-        <input value={search} onChange={onSearchChange} />
+      <form onSubmit={onSearchSubmit} className="flex flex-col bg-slate-400">
+        <input
+          value={search}
+          onChange={onSearchChange}
+          className="focus:outline-2 ring-blue-200 focus:outline-blue-400 place-self-center"
+        />
       </form>
     </>
   );

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CompanySearch } from "../types";
 
 type Props = {
@@ -7,7 +8,7 @@ type Props = {
 const PortfolioCard = ({ item, onPortfolioDelete }: Props) => {
   return (
     <div>
-      {item.name}
+      <Link to={`company/${item.symbol}`}>{item.name}</Link>
 
       <button onClick={() => onPortfolioDelete(item)}>delete</button>
     </div>
