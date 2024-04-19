@@ -8,7 +8,7 @@ import SearchPage from "./pages/SearchPage.tsx";
 import CompanyPage from "./pages/CompanyPage.tsx";
 import CompanyProfile from "./components/CompanyProfile.tsx";
 import IncomeStatement from "./components/IncomeStatement.tsx";
-import DesignPage from "./pages/DesignPage.tsx";
+import DesignPage from "./pages/DesignGuide.tsx";
 
 const router = createBrowserRouter([
   {

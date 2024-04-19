@@ -1,8 +1,8 @@
 type Props = {
   title: string;
-  content: string;
+  subTitle: string;
 };
-const CompanyTile = ({ title, content }: Props) => {
+const CompanyTile = ({ title, subTitle }: Props) => {
   return (
     <div className="px-4 w-full lg:w-6/12 xl:w-3/12">
       <div className="relative flex flex-col bg-white shadow-lg mb-6 xl:mb-0 rounded-lg min-w-0 break-words">
@@ -13,7 +13,7 @@ const CompanyTile = ({ title, content }: Props) => {
                 {title}
               </h5>
 
-              <span className="font-bold text-xl">{content}</span>
+              <span className="font-bold text-xl">{subTitle}</span>
             </div>
           </div>
         </div>

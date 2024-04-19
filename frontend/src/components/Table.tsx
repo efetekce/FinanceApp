@@ -1,26 +1,56 @@
-type Props = {
-  testDataCompany: any;
-};
-const Table = ({ testDataCompany }: Props) => {
-  const tableRows = testDataCompany.map((company: any) => {
+import { testIncomeStatementData } from "../data";
+
+const data = testIncomeStatementData;
+
+type Props = {};
+
+type Company = (typeof data)[0];
+
+const configs = [
+  {
+    label: "Year",
+    render: (company: Company) => company.acceptedDate,
+  },
+  {
+    label: "Cost of Revenue",
+    render: (company: Company) => company.costOfRevenue,
+  },
+];
+
+const Table = (props: Props) => {
+  const renderedRows = data.map((company) => {
     return (
       <tr key={company.cik}>
-        <td className="p-3">{company.symbol}</td>;
+        {configs.map((val: any) => {
+          return (
+            <td className="p-4 font-normal text-gray-900 text-sm whitespace-nowrap">
+              {val.render(company)}
+            </td>
+          );
+        })}
       </tr>
     );
   });
 
-  const tableHeaders= 
+  const renderedHeaders = configs.map((config: any) => {
+    return (
+      <th
+        className="p-4 font-medium text-gray-500 text-left text-xs uppercase tracking-wider"
+        key={config.label}
+      >
+        {config.label}
+      </th>
+    );
+  });
 
   return (
-    <div>
-      <table>
-        <thead>
-          <tr></tr>
-        </thead>
-        <tbody>{tableRows}</tbody>
+    <div className="bg-white shadow p-4 sm:p-6 xl:p-8 rounded-lg">
+      <table className="m-5 divide-y divide-gray-200 min-w-full">
+        <thead className="bg-gray-50">{renderedHeaders}</thead>
+        <tbody>{renderedRows}</tbody>
       </table>
     </div>
   );
 };
+
 export default Table;
