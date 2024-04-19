@@ -8,6 +8,7 @@ import SearchPage from "./pages/SearchPage.tsx";
 import CompanyPage from "./pages/CompanyPage.tsx";
 import CompanyProfile from "./components/CompanyProfile.tsx";
 import IncomeStatement from "./components/IncomeStatement.tsx";
+import DesignPage from "./pages/DesignPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
           { path: "company-profile", element: <CompanyProfile /> },
           { path: "income-statement", element: <IncomeStatement /> },
         ],
+      },
+      {
+        path: "design",
+        element: <DesignPage />,
       },
     ],
   },

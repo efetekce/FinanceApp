@@ -9,14 +9,7 @@ const CompanyDashboard = ({ children }: Props) => {
         <div className="mx-auto px-4 md:px-6 w-full">
           <div>
             <div className="flex flex-wrap">{children}</div>
-            <div className="flex flex-wrap">
-              {<Outlet />}
-              {/* <CompanyTile />
-
-              <CompanyTile />
-
-              <CompanyTile /> */}
-            </div>
+            <div className="flex flex-wrap">{<Outlet />}</div>
           </div>
         </div>
       </div>
