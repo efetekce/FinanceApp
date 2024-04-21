@@ -15,7 +15,7 @@ const Card = ({ result, onPortfolioCreate }: Props) => {
       />
       {result.name}
       <div className="details">
-        <Link to={`/company/${result.symbol}`}>
+        <Link to={`/company/${result.symbol}/company-profile`}>
           <h2>{result.name}</h2>
           <p>{result.symbol}</p>
         </Link>

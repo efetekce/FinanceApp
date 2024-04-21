@@ -4,7 +4,7 @@ type Props = {
 };
 const CompanyTile = ({ title, subTitle }: Props) => {
   return (
-    <div className="px-4 w-full lg:w-6/12 xl:w-3/12">
+    <div className="px-4 w-full lg:w-6/12 xl:w-3/12 overflow-y-hidden">
       <div className="relative flex flex-col bg-white shadow-lg mb-6 xl:mb-0 rounded-lg min-w-0 break-words">
         <div className="flex-auto p-4">
           <div className="flex flex-wrap">

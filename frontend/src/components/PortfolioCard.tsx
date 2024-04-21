@@ -8,7 +8,7 @@ type Props = {
 const PortfolioCard = ({ item, onPortfolioDelete }: Props) => {
   return (
     <div>
-      <Link to={`company/${item.symbol}`}>{item.name}</Link>
+      <Link to={`company/${item.symbol}/company-profile`}>{item.name}</Link>
 
       <button onClick={() => onPortfolioDelete(item)}>delete</button>
     </div>
