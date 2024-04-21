@@ -1,5 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import {
+  CompanyBalanceSheet,
   CompanyIncomeStatement,
   CompanyKeyMetrics,
   CompanyProfile,
@@ -74,6 +75,19 @@ export const getIncomeStatement = async (symbol: string | null) => {
   try {
     const response = await axios.get<CompanyIncomeStatement[]>(
       `https://financialmodelingprep.com/api/v3/income-statement/${symbol}?apikey=${
+        import.meta.env.VITE_API_KEY_2
+      }`
+    );
+    console.log(response);
+    return response;
+  } catch (error) {
+    console.log("error: ", error);
+  }
+};
+export const getBalanceSheet = async (symbol: string | null) => {
+  try {
+    const response = await axios.get<CompanyBalanceSheet[]>(
+      `https://financialmodelingprep.com/api/v3/balance-sheet-statement/${symbol}?apikey=${
         import.meta.env.VITE_API_KEY_2
       }`
     );
