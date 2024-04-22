@@ -3,6 +3,7 @@ import { CompanyKeyMetrics } from "../types";
 import { useEffect, useState } from "react";
 import { getKeyMetrics } from "../hooks/useCompanySearch";
 import RatioList from "./RatioList";
+import Spinner from "./Spinner";
 
 type Props = {};
 
@@ -81,7 +82,7 @@ const CompanyProfile = (props: Props) => {
       {companyData ? (
         <RatioList data={companyData} config={tableConfig} />
       ) : (
-        <p>Loading</p>
+        <Spinner />
       )}
     </div>
   );
