@@ -1,3 +1,9 @@
+export type User = {
+  userName: string;
+  email: string;
+  token: string;
+};
+
 export interface CompanySearch {
   currency: string;
   exchangeShortName: string;
