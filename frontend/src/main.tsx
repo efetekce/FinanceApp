@@ -11,6 +11,7 @@ import IncomeStatement from "./components/IncomeStatement.tsx";
 import DesignPage from "./pages/DesignGuide.tsx";
 import BalanceSheet from "./components/BalanceSheet.tsx";
 import CashflowStatement from "./components/CashflowStatement.tsx";
+import { UserContext } from "./context/UserContext.ts";
 
 const router = createBrowserRouter([
   {

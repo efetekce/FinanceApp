@@ -4,6 +4,11 @@ export type User = {
   token: string;
 };
 
+export type UserProfile = {
+  userName: string;
+  email: string;
+};
+
 export interface CompanySearch {
   currency: string;
   exchangeShortName: string;

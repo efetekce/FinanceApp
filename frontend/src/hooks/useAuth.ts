@@ -32,6 +32,12 @@ const useAuth = () => {
         }
       );
       console.log(response);
+      const user = {
+        userName: response.data.userName,
+        email: response.data.email,
+        token: response.data.token,
+      };
+      return user;
     } catch (error) {
       console.log(error);
     }
